@@ -6,14 +6,10 @@ Install dependencies with: npm install
 Start the project with: npm run dev
 Open http://localhost:3000 in your browser
 
-This projects covers: 
-- Components & JSX 
-- Lists & Keys 
-- Props & Callbacks 
-- State & Controlled Inputs 
-- Conditional Rendering 
-- Effects & Cleanup 
-- Lifting State 
-- Client vs Server Components 
-- API Routes 
-- Tailwind UI styling
+This project creates a Mini Store front where clients will be able to : 
+- Browse products
+- Filter by category and price
+- Add items to a cart
+- View cart totals
+- See product stock update over time
+- View loading, error, and empty states
