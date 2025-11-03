@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import StatusMessage from './StatusMessage';
+import ProductList from './ProductList';
 
 export default function Catalog() {
   const [products, setProducts] = useState([]);
@@ -41,13 +42,11 @@ export default function Catalog() {
         isEmpty={!loading && !error && products.length === 0}
       />
       {!loading && !error && (
-        <p className="text-sm">Step 4: fetched {products.length} products</p>
+        <>
+          <p className="text-sm">Step 4: fetched {products.length} products</p>
+          <ProductList products={products} onAdd={addToCart} />
+        </>
       )}
     </section>
   );
 }
-
-
-{!loading && !error && products.length > 0 && (
-  <ProductList products={products} onAdd={addToCart} />
-)}
