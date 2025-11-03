@@ -7,6 +7,9 @@ export default function Catalog() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading]   = useState(true);
   const [error, setError]       = useState(null);
+  const addToCart = (id) => console.log('[CATALOG] addToCart', id);
+
+
 
  useEffect(() => {
     console.log('[DEBUG] starting fetch...');
@@ -28,4 +31,23 @@ export default function Catalog() {
     })(); 
   }, []); 
 
+  console.log('[CATALOG] render summary', { count: products.length, loading, error });
+
+  return (
+    <section className="mt-6 space-y-3">
+      <StatusMessage
+        loading={loading}
+        error={error}
+        isEmpty={!loading && !error && products.length === 0}
+      />
+      {!loading && !error && (
+        <p className="text-sm">Step 4: fetched {products.length} products</p>
+      )}
+    </section>
+  );
 }
+
+
+{!loading && !error && products.length > 0 && (
+  <ProductList products={products} onAdd={addToCart} />
+)}
