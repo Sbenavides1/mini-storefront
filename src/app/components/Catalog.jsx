@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import StatusMessage from './StatusMessage';
-import CategoryFilter from './CategoryFilter';
-import PriceFilter from './PriceFilter';
-import ProductList from './ProductList';
-import CartSummary from './CartSummary';
+export default function Catalog() {
+  return (
+    <section className="mt-6">
+      <p className="text-sm text-gray-600">Step 3: Catalog stub renders </p>
+    </section>
+  );
+}
